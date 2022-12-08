@@ -8,6 +8,8 @@ class Interface {
 public:
     Interface();
     ~Interface();
+    
+public:
     void checkUP(std::string& example, float& result);
 
 private:
