@@ -50,6 +50,10 @@ TEST(Interface, ExceptionSymbol)
     std::string example = "ewf+8+3*(&^&*";
     interface->checkUP(example, result);
     EXPECT_EQ(example, "Error");
+    
+    std::string example = "+*-";
+    interface->checkUP(example, result);
+    EXPECT_EQ(example, "Error");
     delete interface;
 }
 
