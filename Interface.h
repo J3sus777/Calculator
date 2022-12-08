@@ -1,15 +1,17 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
-#include "Calculator.h"
 #include "Exception.h"
 #include "SearchBKT.h"
 #include <iostream>
 
-class CheckUP
-    : public Calculator
-    , public Exception
-    , public SearchBKT {
+class Interface {
 public:
-    void checkUP(std::string example, float& result);
+    Interface();
+    ~Interface();
+    void checkUP(std::string& example, float& result);
+
+private:
+    SearchBKT* bkt;
+    Exception* exc;
 };
 #endif  // INTERFACE_H
