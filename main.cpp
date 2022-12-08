@@ -7,15 +7,14 @@ int main()
 {
     float result = 0;
     std::string example = "";
-    CheckUP* ch = new CheckUP();
+    Interface* interface = new Interface();
 
     std::cout << "Enter your mathimatical example: ";
     std::getline(std::cin, example);
-
-    ch->checkUP(example, result);
+    interface->checkUP(example, result);
 
     std::cout << "Result = " << result << std::endl;
 
-    delete ch;
+    delete interface;
     return 0;
 }
