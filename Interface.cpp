@@ -1,11 +1,22 @@
 #include "Interface.h"
 
-void CheckUP::checkUP(std::string example, float& result)
+Interface::Interface()
 {
-    exceptionSpace(example);
-    if (exceptionDuplicateSymbols(example) == false || exceptionSymbol(example) == false ||
-        exceptionVoidString(example) == false)
+    exc = new Exception();
+    bkt = new SearchBKT();
+}
+Interface::~Interface()
+{
+    delete exc;
+    delete bkt;
+}
+void Interface::checkUP(std::string& example, float& result)
+{
+    exc->exceptionSpace(example);
+    if (exc->exceptionDuplicateSymbols(example) == false ||
+        exc->exceptionSymbol(example) == false || exc->exceptionVoidString(example) == false)
+        // example = "Error";  // for test
         std::cout << "Error\n";
     else
-        searchBKT(example, result);
+        bkt->searchBKT(example, result);
 }
